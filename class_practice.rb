@@ -4,10 +4,15 @@
 
 #Rewrite your store items using a class with a single options hash in the initialize method.
 
+#Replace your “reader” and “writer” methods using the attr_reader and attr_writer shortcuts!
+
 
 #create class and def initialize
 
 class Coffee
+
+  attr_reader :item_name, :price, :availability
+  attr_writer :price, :availability
 
   def initialize(input_options)
     @item_name = input_options[:item_name]
@@ -17,28 +22,6 @@ class Coffee
 
   def coffee_info
     p "#{@item_name} is #{@price}. Is available: #{@availability}."
-  end
-
-#reader/writer methods--reader all, writer - price/availability
-
-  def item_name
-    @item_name
-  end
-
-  def price
-    @price
-  end
-
-  def price=(input_price)
-    @price = input_price
-  end
-
-  def availability
-    @availability
-  end
-
-  def availability=(input_availability)
-    @availability = input_availability
   end
 
 end
